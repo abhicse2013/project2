@@ -1,4 +1,4 @@
-FROM openjdk:8
+FROM tomcat
+ADD target/addressbook.war /usr/local/tomcat/webapps
 EXPOSE 8080
-ADD target/devops-integration.jar devops-integration.jar
-ENTRYPOINT ["java","-jar","/devops-integration.jar"]
+CMD ["catalina.sh", "run"]
