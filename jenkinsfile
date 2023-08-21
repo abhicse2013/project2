@@ -2,12 +2,14 @@ pipeline {
     agent any
     tools{
         maven 'mymaven'
+        jdk 'myjava'
     }
     stages{
         stage('Build Maven'){
             steps{
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/abhicse2013/project2']]])
-                sh 'mvn clean install'
+                sh 'mvn complie'
+                sh 'mvn package'
             }
         }
 
