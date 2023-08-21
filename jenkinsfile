@@ -8,7 +8,7 @@ pipeline {
         stage('compile'){
             agent any
             steps{
-                git 'https://github.com/abhicse2013/project2.git'
+                git 'https://github.com/edureka-git/DevOpsClassCodes.git'
                 sh "mvn compile"
             }
         }
