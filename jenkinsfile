@@ -37,7 +37,6 @@ pipeline {
 
 }
                    sh 'docker push abhicse2013/project2:$BUILD_NUMBER'
-                   sh 'docker run -itd -P abhicse2013/project2:$BUILD_NUMBER'
                 }
             }
         }
