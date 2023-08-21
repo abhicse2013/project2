@@ -9,7 +9,7 @@ pipeline {
             agent any
             steps{
                 git 'https://github.com/abhicse2013/project2.git'
-                sh "mvn complie"
+                sh "mvn compile"
             }
         }
 
