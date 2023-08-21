@@ -22,6 +22,12 @@ pipeline {
                 sh "mvn package"
             }
     }
-
+        stage('Build docker image'){
+            steps{
+                script{
+                    sh 'docker build -t abhicse2013/project2:$BUILD_NUMBER .'
+                }
+            }
+        }
     }
 }
