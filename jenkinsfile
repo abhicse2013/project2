@@ -5,10 +5,11 @@ pipeline {
         jdk 'myjava'
     }
     stages{
-        stage('Build Maven'){
+        stage('compile'){
+            agent any
             steps{
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/abhicse2013/project2']]])
-                sh 'mvn complie'
+                git 'https://github.com/abhicse2013/project2.git'
+                sh "mvn complie"
             }
         }
 
