@@ -9,7 +9,6 @@ pipeline {
             steps{
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/abhicse2013/project2']]])
                 sh 'mvn complie'
-                sh 'mvn package'
             }
         }
 
